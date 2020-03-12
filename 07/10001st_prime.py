@@ -6,11 +6,13 @@ What is the 10,001st prime number?
 
 primes = [2]
 
+
 def is_prime(num):
     for prime in primes:
         if num % prime == 0:
             return False
     return True
+
 
 num = 3
 while len(primes) < 10001:
@@ -19,4 +21,3 @@ while len(primes) < 10001:
     num += 1
 
 print(primes[-1])
-
