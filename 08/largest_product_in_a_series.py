@@ -25,6 +25,9 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this
 product?
 """
+import time
+
+start_time = time.time()
 
 string = """73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
@@ -63,3 +66,5 @@ for i in range(len(digits) - 13):
     max_product = max(max_product, curr_product)
 
 print(max_product)
+
+print("Took %s seconds to complete" % (time.time() - start_time))

@@ -3,6 +3,9 @@
 
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 """
+import time
+
+start_time = time.time()
 
 factor_map = {}
 for i in range(2, 21):
@@ -34,3 +37,5 @@ for factor in factor_totals:
         product *= factor
 
 print(product)
+
+print("Took %s seconds to complete" % (time.time() - start_time))

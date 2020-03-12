@@ -8,6 +8,9 @@ For example, when the list is sorted into alphabetical order, COLIN, which is wo
 
 What is the total of all the name scores in the file?
 """
+import time
+
+start_time = time.time()
 
 
 def name_score(name):
@@ -28,3 +31,5 @@ with open(filename, 'r') as file:
     total_score = sum([score * (i + 1) for i, score in enumerate(name_scores)])
 
     print(total_score)
+
+print("Took %s seconds to complete" % (time.time() - start_time))

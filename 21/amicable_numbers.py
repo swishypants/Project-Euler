@@ -8,7 +8,9 @@ The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
 
 Evaluate the sum of all the amicable numbers under 10000.
 """
+import time
 
+start_time = time.time()
 
 def amicable(i, j):
     return i + j if divisors(i) == j and divisors(j) == i else 0
@@ -29,3 +31,5 @@ for i in range(1, 9999):
     for j in range(i + 1, 10000):
         amicable_sum += amicable(i, j)
 print(amicable_sum)
+
+print("Took %s seconds to complete" % (time.time() - start_time))

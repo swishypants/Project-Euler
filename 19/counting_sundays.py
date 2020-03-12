@@ -11,6 +11,9 @@ And on leap years, twenty-nine.
 A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
 How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 """
+import time
+
+start_time = time.time()
 
 
 def sundays(start, end):
@@ -30,3 +33,5 @@ def zellers_congruence(day, month, year):
 
 
 print(sundays(1901, 2000))
+
+print("Took %s seconds to complete" % (time.time() - start_time))

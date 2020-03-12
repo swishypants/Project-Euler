@@ -3,6 +3,9 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 
 What is the 10,001st prime number?
 """
+import time
+
+start_time = time.time()
 
 primes = [2]
 
@@ -21,3 +24,5 @@ while len(primes) < 10001:
     num += 1
 
 print(primes[-1])
+
+print("Took %s seconds to complete" % (time.time() - start_time))

@@ -4,6 +4,9 @@ multiples is 23.
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 """
+import time
+
+start_time = time.time()
 
 sum_multiples = 0
 
@@ -12,3 +15,5 @@ for num in range(1000):
         sum_multiples += num
 
 print(sum_multiples)
+
+print("Took %s seconds to complete" % (time.time() - start_time))
