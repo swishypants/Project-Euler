@@ -17,7 +17,7 @@ def name_score(name):
     return sum([ord(c) - 96 for c in name])
 
 
-filename = "names.txt"
+filename = 'names.txt'
 with open(filename, 'r') as file:
     names = file.read().lower()
     names = names.replace("\"", "")
