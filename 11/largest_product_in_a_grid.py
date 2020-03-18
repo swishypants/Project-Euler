@@ -41,51 +41,50 @@ for line in grid:
 
 
 def max_horizontal_product():
-    max_product = 0
+    product = 0
     for i in range(len(grid)):
         j = 3
         while j < len(grid[i]):
-            product = grid[i][j] * grid[i][j - 1] * grid[i][j - 2] * grid[i][j - 3]
+            product = max(product, grid[i][j] * grid[i][j - 1] * grid[i][j - 2] * grid[i][j - 3])
             if grid[i][j] == 0:
                 j += 4
             else:
                 j += 1
-            max_product = max(max_product, product)
-    return max_product
+    return product
 
 
 def max_vertical_product():
-    max_product = 0
+    product = 0
     for j in range(len(grid[0])):
         i = 4
         while i < len(grid):
-            product = grid[i][j] * grid[i - 1][j] * grid[i - 2][j] * grid[i - 3][j]
+            product = max(product, grid[i][j] * grid[i - 1][j] * grid[i - 2][j] * grid[i - 3][j])
             if grid[i][j] == 0:
                 i += 4
             else:
                 i += 1
-            max_product = max(max_product, product)
-    return max_product
+    return product
 
 
 def max_diagonal_product():
-    max_product = 0
+    product = 0
     # \ diagonals
     for i in range(len(grid) - 3):
         for j in range(len(grid[i]) - 3):
-            product = grid[i][j] * grid[i + 1][j + 1] * grid[i + 2][j + 2] * grid[i + 3][j + 3]
-            max_product = max(max_product, product)
+            product = max(product, grid[i][j] * grid[i + 1][j + 1] * grid[i + 2][j + 2] * grid[i + 3][j + 3])
 
     # / diagonals
     for i in range(len(grid) - 3):
         for j in range(3, len(grid[i])):
-            product = grid[i][j] * grid[i + 1][j - 1] * grid[i + 2][j - 2] * grid[i + 3][j - 3]
-            max_product = max(max_product, product)
-    return max_product
+            product = max(product, grid[i][j] * grid[i + 1][j - 1] * grid[i + 2][j - 2] * grid[i + 3][j - 3])
+    return product
 
 
-print(max_horizontal_product())
-print(max_vertical_product())
-print(max_diagonal_product())
+max_horizontal = max_horizontal_product()
+max_vertical = max_vertical_product()
+max_diagonal = max_diagonal_product()
+max_product = max(max_horizontal, max_vertical, max_diagonal)
+
+print(max_product)
 
 print("Took %s seconds to complete" % (time.time() - start_time))
